@@ -1,1 +1,28 @@
-<p>ngz-grid-container works!</p>
+<div>
+    <table>
+        <thead>
+            <ng-container *ngFor="let colData of gridColumns">
+                <th *ngIf="!colData.hide">
+                    <span [textContent]="colData.headerName"></span>
+                </th>
+            </ng-container>
+        </thead>
+        <tbody [formGroup]="formGroup">
+            <ng-container
+                formArrayName="gridForm"
+                *ngFor="
+                    let rowControl of formGroup.get('gridForm').controls;
+                    let i = index    
+                "
+            >
+                <app-ngz-grid-data-row
+                    [rowControl]="rowControl"
+                    [rowData]="gridData[i]"
+                    [gridColumns]="gridColumns"
+                    ngNoHost
+                >
+                </app-ngz-grid-data-row>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

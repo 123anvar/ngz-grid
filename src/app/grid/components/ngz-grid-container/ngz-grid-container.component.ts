@@ -12,19 +12,16 @@ export class NgzGridContainerComponent implements OnInit {
   gridData = [];
   formGroup: FormGroup;
   formArray: FormArray;
-
   @Input('id')
   set id(gId: string) {
     this.gridId = gId;
   }
-
   @Input('columns')
   set columns(gColumns: any[]) {
     if (gColumns && gColumns.length) {
       this.gridColumns = gColumns.sort((a, b) => a['columnOrder'] - b['columnOrder']);
     }
   }
-
   @Input('dataSource')
   set dataSource(gDataSource: any[]) {
     if (gDataSource && gDataSource.length) {

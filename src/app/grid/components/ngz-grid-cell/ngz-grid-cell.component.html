@@ -1,0 +1,66 @@
+<div>
+    <app-ngz-grid-check-box
+        *ngIf="gridColumn.cellTemplate === 'checkbox'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-check-box>
+    <app-ngz-grid-custom-template
+        *ngIf="gridColumn.cellTemplate === 'custom'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-custom-template>
+    <app-ngz-grid-date-picker
+        *ngIf="gridColumn.cellTemplate === 'date'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-date-picker>
+    <app-ngz-grid-label 
+        *ngIf="gridColumn.cellTemplate === 'label'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-label>
+    <app-ngz-grid-numeric-text-box
+        *ngIf="gridColumn.cellTemplate === 'numeric'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-numeric-text-box>
+    <app-ngz-grid-radio-button
+        *ngIf="gridColumn.cellTemplate === 'radio'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-radio-button>
+    <app-ngz-grid-select
+        *ngIf="gridColumn.cellTemplate === 'select'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-select>
+    <app-ngz-grid-text-box
+        *ngIf="gridColumn.cellTemplate === 'text'"
+        [column]="gridColumn"
+        [rowData]="rowData"
+        [gridRowControl]="gridRowControl"
+        [gridFormControl]="gridFormControl"
+    >
+    </app-ngz-grid-text-box>
+</div>
