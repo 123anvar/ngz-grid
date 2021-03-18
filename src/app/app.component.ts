@@ -42,6 +42,6 @@ export class AppComponent implements OnInit {
   setDataSource() {
     this.dataSource.push({ IsSelected: false, Id: 101, Name: 'Achuth', BirthDate: '08/10/1992', Role: 'Associate' });
     this.dataSource.push({ IsSelected: false, Id: 102, Name: 'Rimbochi', BirthDate: '05/02/1999', Role: 'Programmer Analyst' });
-    this.dataSource.push({ IsSelected: false, Id: 102, Name: 'Firoz Chuttippara', BirthDate: '12/11/1994', Role: 'Programmer Analyst' });
+    this.dataSource.push({ IsSelected: false, Id: 103, Name: 'Firoz Chuttippara', BirthDate: '12/11/1994', Role: 'Programmer Analyst' });
   }
 }

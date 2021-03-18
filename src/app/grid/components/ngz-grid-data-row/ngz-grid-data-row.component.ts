@@ -1,20 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ngz-grid-data-row',
   templateUrl: './ngz-grid-data-row.component.html',
-  styleUrls: ['./ngz-grid-data-row.component.scss']
+  styleUrls: ['./ngz-grid-data-row.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgzGridDataRowComponent implements OnInit {
+export class NgzGridDataRowComponent implements OnInit, AfterViewInit {
+  gridColumns = [];
   @Input() rowControl: FormGroup;
   @Input() rowData: any;
-  @Input() gridColumns: any[];
+  @Input() rowIndex: number;
+  @Input('columns')
+  set columns(gColumns: any[]) {
+    this.gridColumns = gColumns;
+  } 
 
-  constructor() { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    console.log('Reached');
+  }
+
+  ngAfterViewInit() {
+    this.changeDetectorRef.detectChanges();
   }
 
 }

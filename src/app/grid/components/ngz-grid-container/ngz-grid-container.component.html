@@ -1,24 +1,27 @@
 <div>
     <table>
         <thead>
-            <ng-container *ngFor="let colData of gridColumns">
-                <th *ngIf="!colData.hide">
-                    <span [textContent]="colData.headerName"></span>
-                </th>
-            </ng-container>
+            <tr>
+                <ng-container *ngFor="let colData of gridColumns">
+                    <th *ngIf="!colData.hide">
+                        <span [textContent]="colData.headerName"></span>
+                    </th>
+                </ng-container>
+            </tr>
         </thead>
         <tbody [formGroup]="formGroup">
             <ng-container
                 formArrayName="gridForm"
                 *ngFor="
                     let rowControl of formGroup.get('gridForm').controls;
-                    let i = index    
+                    let i = index
                 "
             >
                 <app-ngz-grid-data-row
                     [rowControl]="rowControl"
                     [rowData]="gridData[i]"
-                    [gridColumns]="gridColumns"
+                    [columns]="gridColumns"
+                    [rowIndex]="i"
                     ngNoHost
                 >
                 </app-ngz-grid-data-row>

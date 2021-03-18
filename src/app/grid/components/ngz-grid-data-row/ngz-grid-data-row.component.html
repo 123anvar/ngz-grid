@@ -4,8 +4,9 @@
             <td *ngIf="!colData.hide">
                 <app-ngz-grid-cell
                     [column]="colData"
-                    [gridRowControl]="rowControl"
+                    [gridRowControls]="rowControl"
                     [rowData]="rowData"
+                    [rowIndex]="rowIndex"
                     [gridFormControl]="rowControl.controls[colData.field]"
                 >
                 </app-ngz-grid-cell>

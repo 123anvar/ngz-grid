@@ -1,4 +1,4 @@
-<div>
+<div #gridCell>
     <app-ngz-grid-check-box
         *ngIf="gridColumn.cellTemplate === 'checkbox'"
         [column]="gridColumn"
@@ -63,4 +63,5 @@
         [gridFormControl]="gridFormControl"
     >
     </app-ngz-grid-text-box>
+    <ng-container #dynamicCell></ng-container>
 </div>
